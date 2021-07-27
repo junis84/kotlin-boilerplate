@@ -1,0 +1,29 @@
+spring:
+  config:
+    activate:
+      on-profile:
+  datasource:
+    hikari:
+      auto-commit: false
+      maximum-pool-size: 1
+      pool-name: HikariCP
+      connection-timeout: 3000
+    url: jdbc:mariadb://develdb.db.devel.corp.musinsa.com:3306/bizest?characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull&usePipelineAuth=false&useBatchMultiSend=false
+    username: raptor
+    password: kcy8aidzw#
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    show-sql: true # 콘솔에서 JPA 쿼리 출력
+    open-in-view: false #웹 요청이 완료될 떄까지 EntityManager를 유지 하도록 설정 기본이 True
+    properties:
+      hibernate:
+        ddl-auto: none
+        # - none : 아무것도 실행하지 않습니다. - create: SessionFactory가 시작될 때 기존테이블을 삭제 후 다시 생성합니다.
+        # - create-drop: create와 같으나 SessionFactory가 종료될 때 drop을 실행합니다.
+        # - update: 변경된 스키마만 반영합니다.
+        # - validate: 엔티티와 테이블이 정상적으로 매핑되었는지만 확인합니다.
+        format_sql: true # Sql가독성 좋게 출력
+
+context:
+  initializer:
+    classes: com.musinsa.codi.core.BeansInitializer
