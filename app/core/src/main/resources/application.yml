@@ -8,9 +8,9 @@ spring:
       maximum-pool-size: 1
       pool-name: HikariCP
       connection-timeout: 3000
-    url: jdbc:mariadb://develdb.db.devel.corp.musinsa.com:3306/bizest?characterEncoding=UTF-8&serverTimezone=Asia/Seoul&zeroDateTimeBehavior=convertToNull&usePipelineAuth=false&useBatchMultiSend=false
-    username: raptor
-    password: kcy8aidzw#
+    url: # insert your database url
+    username: # insert your database username
+    password: # insert your database password
     driver-class-name: org.mariadb.jdbc.Driver
   jpa:
     show-sql: true # 콘솔에서 JPA 쿼리 출력
