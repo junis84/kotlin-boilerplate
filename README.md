@@ -12,6 +12,9 @@ An application using Domain-Driven Design (DDD) and Command Query Responsibility
 - Code coverage using Jacoco
 - Logging with [Kotlin-logging](https://github.com/MicroUtils/kotlin-logging)
 - Gradle Kotlin DSL
+- Bus Pattern Implementation
+- Presentation layer web application using [Spring Boot](https://spring.io/projects/spring-boot)
+- Persistence API Implementation by [Querydsl](https://querydsl.com/)
 
 ## Architecture overview
 ### Layers
@@ -46,13 +49,13 @@ Pretty straight forward, the controller receives the request, calls the related 
 │       └── src
 │           ├── integration-test
 │           │   └── kotlin
-│           │       └── com.musinsa.codi.cord
+│           │       └── com.musinsa.codi.core
 │           ├── main
 │           │   └── kotlin
-│           │       └── com.musinsa.codi.cord
+│           │       └── com.musinsa.codi.core
 │           └── test
 │               └── kotlin
-│                  └── com.musinsa.codi.cord
+│                  └── com.musinsa.codi.core
 ├── context
 │   └── coordi
 │       └── src
@@ -71,6 +74,31 @@ Pretty straight forward, the controller receives the request, calls the related 
 │                    └── application
 │                    └── domain
 │                    └── infrastructure
+├── buildSrc
+│   └── src
+│       └── main
+│           ├── kotlin
+│           └── resources
+├── context
+│   └── codi
+│       └── src
+│           ├── integration-test
+│           │   └── kotlin
+│           │       └── com.musinsa.codi
+│           ├── main
+│           │   └── kotlin
+│           │       └── com.musinsa.codi
+│           │         └── application
+│           │         └── domain
+│           │         └── infrastructure
+│           └── test
+│               └── kotlin
+│                  └── com.musinsa.codi
+│                    └── application
+│                    └── domain
+│                    └── infrastructure
+├── gradle
+│   └── wrapper
 └── shared
     └── src
         ├── main
